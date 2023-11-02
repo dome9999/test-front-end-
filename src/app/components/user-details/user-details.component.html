@@ -1,0 +1,153 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentUser.id">
+      <!-- <h4>user</h4>
+      <div>
+        <label><strong>Name:</strong></label>
+         {{ currentUser.name }}
+      </div>
+      <div>
+        <label><strong>expired_date:</strong></label>
+        {{ currentUser.expired_date }}
+      </div>
+      <div>
+        <label><strong>total_coins:</strong></label>
+        {{ currentUser.total_coins }}
+      </div>
+      <div>
+        <label><strong>unit_price:</strong></label>
+        {{ currentUser.unit_price }}
+      </div>
+      <div>
+        <label><strong>attive_voices:</strong></label>
+        {{ currentUser.attive_voices }}
+      </div>
+      <div>
+        <label><strong>max_storage_size:</strong></label>
+        {{ currentUser.max_storage_size }}
+      </div>
+      <div>
+        <label><strong>apikey:</strong></label>
+        {{ currentUser.apikey }}
+      </div>
+      <div>
+        <label><strong>email:</strong></label>
+        {{ currentUser.email }}
+      </div> -->
+      <!-- <a
+        class="badge badge-warning"
+        routerLink="/user/{{ currentUser.id}}"
+      >
+        Edit
+      </a> -->
+    </div>
+    <div *ngIf="!currentUser">
+      <br />
+      <p>Please click on a User...</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentUser.id" class="edit-form">
+      <h4>User</h4>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentUser.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="text"
+            class="form-control"
+            id="age"
+            [(ngModel)]="currentUser.age"
+            name="age"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address"</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            [(ngModel)]="currentUser.address"
+            name="address"
+          />
+        </div>
+        <div class="form-group">
+          <label for="symptoms">Symptoms</label>
+          <input
+            type="text"
+            class="form-control"
+            id="symptoms"
+            [(ngModel)]="currentUser.symptoms"
+            name="symptoms"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            [(ngModel)]="currentUser.email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phonenumber">Phonenumber</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phonenumber"
+            [(ngModel)]="currentUser.phonenumber"
+            name="phonenumber"
+          />
+        </div>
+        <!-- <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentUser.published ? "Published" : "Pending" }}
+        </div> -->
+      </form>
+      <!-- <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentUser."
+        (click)="updatePublished(false)"
+      >--
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentUser.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button> -->
+      
+      <!-- <button class="badge badge-danger mr-2" (click)="deleteUser()">
+        Delete
+      </button> -->
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateUser()"
+        class="badge badge-warning"
+        routerLink="/users"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentUser.id">
+      <br />
+      <p>Cannot access this User...</p>
+    </div>
+   
+  </ng-template>
+  
+  

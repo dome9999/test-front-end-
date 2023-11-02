@@ -1,0 +1,35 @@
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+
+  <nav
+    class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg  "
+    id="navbarVertical">
+    <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse"
+    aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span
+      class="navbar-toggler-icon "></span> </button> <a class="navbar-brand text-lg text-primary py-lg-2 mb-lg-5 px-lg-5 me-0 logo"
+    href="#"> ข้อมูลลงทะเบียนผู้ป่วย</a>
+    
+
+    <div class="navbar-nav mr-auto menubar">
+      <li class="nav-item">
+        <a routerLink="users/" class="nav-link">ข้อมูลผู้ป่วย</a>
+        <div class="navbar-nav mr-auto menubar"></div>
+      </li>
+      <li class="nav-item">
+        <a routerLink="users/add" class="nav-link">กรอกข้อมูลผู้ป่วย</a>
+        <div class="navbar-nav mr-auto menubar"></div>
+      </li>
+      
+    </div>
+    
+    
+  </nav>
+  <div class="container-fluid">
+    
+    <div>
+     
+
+      <div class="container mt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
